@@ -1,4 +1,3 @@
-```py
 n, m, k = map(int, input().split())
 data = list(map(int, input().split()))
 # 2가지 조합으로 해결 가능
@@ -20,4 +19,3 @@ while cnt <= m:
   cnt+=1
 
 print(sum)
-```
