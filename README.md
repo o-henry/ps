@@ -18,5 +18,31 @@
 코딩테스트에서 문제유형을 파악하기 어렵다면, 그리디 알고리즘을 의심하고, 해결방법이 존재하는지 고민할 것
 ```
 
+---
 
 ### 구현
+
+---
+
+### 자료구조
+
+파이썬에서의 큐
+
+```py
+
+from collections import deque
+
+queue = deque()
+
+queue.append(5)
+queue.append(2)
+queue.append(3)
+queue.append(7)
+queue.popleft()
+queue.append(1)
+queue.append(4)
+queue.popleft()
+
+# [3, 7, 1, 4]
+```
+
