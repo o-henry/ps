@@ -63,7 +63,9 @@ queue.popleft()
 
 ### BFS
 
-너비 우선 탐색, 두 항목간의 최단 경로를 찾는데 사용 됩니다.
+너비 우선 탐색, 두 항목간의 (최단)경로를 찾는데 사용 됩니다.
+
+문제를 그래프로 모형화 하고, BFS를 사용하자.
 
 ##### 알고리즘 구현
 
@@ -80,22 +82,32 @@ e. 위 과정을 반복한다.
 
 ```py
 from collections import deque
-search_queue = deque()
 
-# ['alice', 'bob', 'claire']
-search_queue += graph['you']
+def search(name):
+    # search_queue = []
+    search_queue = deque()
 
-while search_queue:
-  person = search_queue.popleft()
-  if person_is_seller(person):
-    print person + 'is a mango seller!'
-    return True
-  else: 
-    search_queue += graph[person]
-return False
+    # 탐색을 해야하는 데이터 : ['alice', 'bob', 'claire'] / Hash Map 사용
+    search_queue += graph['you']
 
-def person_is_seller(name):
-  return name[-1] == 'm'
+    # 이미 확인한 데이터 추적
+    searched = []
+    
+    while search_queue:
+      person = search_queue.popleft()
+      if not person in searched:
+        if person_is_seller(person):
+          print person + 'is a mango seller!'
+          return True
+        else: 
+          search_queue += graph[person]
+          searched.append(person)
+    return False
+
+    def person_is_seller(name):
+      return name[-1] == 'm'
+      
+search('you')
 ```
 
 
