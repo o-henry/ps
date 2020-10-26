@@ -57,10 +57,45 @@ queue.popleft()
 
 ### DFS 
 
-깊이 우선 탐색, 그래프에서 깊은 부분을 우선적으로 탐색하는 알고리즘 으로 스택을 이용한다.
+**깊이 우선 탐색**, 그래프에서 깊은 부분을 우선적으로 탐색하는 알고리즘 으로 스택을 이용한다.
 
 특정한 경로로 탐색하다가 특정한 상황에서 최대한 깊숙이 들어가서 노드를 방문한 후, 다시 돌아가 다른경로로 탐색하는 알고리즘
 
 ### BFS
 
 너비 우선 탐색, 두 항목간의 최단 경로를 찾는데 사용 됩니다.
+
+##### 알고리즘 구현
+
+a. 확인할 데이터를 담을 큐를 준비한다.
+
+b. 큐에서 하나를 꺼낸다.
+
+c. 해당 데이터가 A/B인지 확인한다.
+
+d. 분기한다.
+
+e. 위 과정을 반복한다.
+
+
+```py
+from collections import deque
+search_queue = deque()
+
+# ['alice', 'bob', 'claire']
+search_queue += graph['you']
+
+while search_queue:
+  person = search_queue.popleft()
+  if person_is_seller(person):
+    print person + 'is a mango seller!'
+    return True
+  else: 
+    search_queue += graph[person]
+return False
+
+def person_is_seller(name):
+  return name[-1] == 'm'
+```
+
+
