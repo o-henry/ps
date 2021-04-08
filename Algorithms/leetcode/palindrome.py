@@ -2,11 +2,24 @@
 
 회문문자, 앞으로 읽어도 뒤로 읽어도 같은 문장 이 되는 알고리즘
 
-* 리스트로 치환 
-* 어떤 알고리즘을 써야 할까 ? 
-* 순회 하여 비교. => 앞에서 부터, 뒤에서 부터 하나씩 비교
-* 인덱스 필요.
+* 주어진 조건 
+** 입력 타입 string
+** 리스트로 치환
 
-* STACK / QUEUE 
-* 조건 체크
-* 파이썬 특성 pop(0), pop()으로 손쉬운 스택/큐 구현
+알고리즘
+* 앞, 뒤에서 비교한다.
+** 원소 1개씩 각각 비교한다.
+* 순회
+
+def isPalindrome(self, s: str) -> bool:
+  strs = []
+  for char in s:
+    if char.isalnum():
+      strs.append(char.lower())
+      
+  while len(strs) > 1:
+    if strs.pop(0) != strs.pop():
+      return False
+  
+  return True
+
