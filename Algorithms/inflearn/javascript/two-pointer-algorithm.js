@@ -2,8 +2,8 @@ function twoPointer(a, b) {
   let answer = [];
   a.sort();
   b.sort();
-  let pa = 0;
-  let pb = 0;
+  let pa = 0,
+    pb = 0;
 
   while (pa < a.length && pb < b.length) {
     if (a[pa] === b[pb]) {
