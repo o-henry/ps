@@ -1,24 +1,18 @@
-function continuousSubsequence(a, b) {
-  let count = 0;
-  let sum = 0;
-  let pl = 0,
-    pr = 0;
+function continuousSubsequence(n, arr) {
+  let answer = 0,
+    lt = 0,
+    sum = 0;
+  for (let rt = 0; rt < arr.length; rt++) {
+    sum += arr[rt];
+    if (sum === n) answer++;
 
-  for (pr; pr < b.length; pr++) {
-    sum += b[pr];
-    if (sum === a) count++;
-
-    while (sum >= a) {
-      sum -= b[pl++];
-      if (sum === a) {
-        count++;
-      }
+    while (sum >= n) {
+      sum -= arr[lt++];
+      if (sum === n) answer++;
     }
   }
 
-  console.log(count);
-
-  return count;
+  return answer;
 }
 
 let a = 6;
