@@ -1,6 +1,8 @@
 function solution(n) {
   let answer = [];
-  let check = new Array(n + 1).fill(0);
+  let check = Array.from({ length: n + 1 }, () => 0);
+
+  console.log("check", check);
 
   function DFS(v) {
     if (v === n + 1) {
