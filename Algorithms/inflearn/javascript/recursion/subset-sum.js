@@ -1,3 +1,3 @@
-function subsetSum() {}
+function subsetSum(arr) {}
 
 console.log(subsetSum());
