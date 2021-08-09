@@ -12,7 +12,7 @@ function research(n, m, arr) {}
 //   [0, 1, 0, 0, 0, 0, 0],
 // ];
 
-let n =4, m =6
+let n = 4, m = 6
 let arr = [
   [0, 0, 0, 0, 0, 0],
   [1, 0, 0, 0, 0, 2],
