@@ -4,7 +4,6 @@ function solution(n) {
 
   let dx = [0];
   let dy = [-1];
-  let d = ["U"];
 
   for (let i = 0; i < m; i++) {
     for (let j = 0; j < m; j++) {
