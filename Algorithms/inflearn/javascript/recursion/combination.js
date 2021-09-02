@@ -1,3 +1,3 @@
-function combination(n, r) {}
+function solution(n, m) {}
 
-console.log(combination(5, 3));
+console.log(solution(n, m));
